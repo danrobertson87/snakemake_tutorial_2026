@@ -1,0 +1,33 @@
+rule all:
+    input:
+        "tea/cup_of_tea.txt"
+
+rule boil_water:
+    output:
+        "water/boiled_water.txt"
+    shell:
+        "echo 'Boiled Water' > {output}"
+
+rule steep_tea:
+    input:
+        "water/boiled_water.txt"
+    output:
+        "tea/steeped_tea.txt"
+    shell:
+        "cat {input} > {output} && echo 'Steeped Tea' >> {output}"
+
+rule remove_tea_bag:
+        input:
+                "tea/steeped_tea.txt"
+        output:
+                "tea/tea_without_bag.txt"
+        shell:
+                "cat {input} > {output} && echo 'Tea without Bag' >> {output}"
+
+rule add_milk:
+    input:
+        "tea/tea_without_bag.txt"
+    output:
+        "tea/cup_of_tea.txt"
+    shell:
+        "cat {input} > {output} &&  echo 'Cup of Tea with Milk' >> {output}"

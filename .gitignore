@@ -1,0 +1,35 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Snakemake
+.snakemake/
+
+# Snakemake Output Directories
+calls/
+mapped_reads/
+plots/
+sorted_reads/
+
+# Downloaded Tutorial Data
+data/
+
+# Quarto Local Build Files
+snake_demo.html
+snake_demo_files/
+
+# Bioinformatics data and outputs
+*.bam
+*.sam
+*.vcf
+*.bai
+*.fastq
+*.fq
+*.tar.gz
+
+# Quarto build files
+.quarto/
+_site/
+
+# Mac system files
+.DS_Store
