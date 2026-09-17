@@ -33,3 +33,5 @@ _site/
 
 # Mac system files
 .DS_Store
+.Rproj.user/
+.Rhistory
