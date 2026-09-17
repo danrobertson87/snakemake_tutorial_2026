@@ -205,6 +205,8 @@ pixi init --import environment.yaml
 
 I  encourage you to build up the Snakefile incrementally starting with the [basics](https://snakemake.readthedocs.io/en/stable/tutorial/basics.html).
 
+You can view the full tea Snakefile [here](https://github.com/danrobertson87/snakemake_tutorial_2026/blob/main/go_on/Snakefile).
+
 \
 \
 
