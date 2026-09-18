@@ -185,27 +185,58 @@ part of our [Autumn training](https://drp-hcb-bioinformatics.github.io/DRP-HCB-B
 
 [Snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) recommends installing via Pixi/conda;
 
+This assumes you have conda/pixi installed already (it is possible to install with conda alone).
+
+[Pixi installation](https://pixi.prefix.dev/latest/installation/) \
+[conda installation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
+
 ``` bash
 pixi global install snakemake conda -c conda-forge -c bioconda
 ```
 
+Please see link below, this will give the correct commands for your system;
 [Instructions for setting up tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/setup.html)
+
+Here I've set up my mac with;
 
 ``` bash
 mkdir snakemake-tutorial
 cd snakemake-tutorial
+```
 
+``` bash
 curl -L https://api.github.com/repos/snakemake/snakemake-tutorial-data/tarball -o snakemake-tutorial-data.tar.gz
+```
 
+``` bash
 tar -xf snakemake-tutorial-data.tar.gz --strip 1 "*/data" "*/environment.yaml"
+```
 
+``` bash
 pixi init --import environment.yaml
+```
+
+``` bash
+pixi shell
 # type 'exit' to return to base shell
 ```
+
+
+
 
 I  encourage you to build up the Snakefile incrementally starting with the [basics](https://snakemake.readthedocs.io/en/stable/tutorial/basics.html).
 
 You can view the full tea Snakefile [here](https://github.com/danrobertson87/snakemake_tutorial_2026/blob/main/go_on/Snakefile).
+
+``` bash
+mkdir go_on
+cd go_on
+# download Snakefile or copy/paste from above link
+nano Snakefile
+# confirm file is there
+ls
+snakemake --cores 1 -p
+```
 
 \
 \
