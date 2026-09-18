@@ -169,24 +169,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-snakemake" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-snakemake">Setting up Snakemake</h2>
 <p><a href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">Snakemake</a> recommends installing via Pixi/conda;</p>
+<p>This assumes you have conda/pixi installed already (it is possible to install with conda alone).</p>
+<p><a href="https://pixi.prefix.dev/latest/installation/">Pixi installation</a> <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">conda installation</a></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install snakemake conda <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><a href="https://snakemake.readthedocs.io/en/stable/tutorial/setup.html">Instructions for setting up tutorial</a></p>
+<p>Please see link below, this will give the correct commands for you system; <a href="https://snakemake.readthedocs.io/en/stable/tutorial/setup.html">Instructions for setting up tutorial</a></p>
+<p>Here i’ve set up my mac with;</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> snakemake-tutorial</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> snakemake-tutorial</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> https://api.github.com/repos/snakemake/snakemake-tutorial-data/tarball <span class="at">-o</span> snakemake-tutorial-data.tar.gz</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> snakemake-tutorial-data.tar.gz <span class="at">--strip</span> 1 <span class="st">"*/data"</span> <span class="st">"*/environment.yaml"</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> init <span class="at">--import</span> environment.yaml</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># type 'exit' to return to base shell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> snakemake-tutorial</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> https://api.github.com/repos/snakemake/snakemake-tutorial-data/tarball <span class="at">-o</span> snakemake-tutorial-data.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> snakemake-tutorial-data.tar.gz <span class="at">--strip</span> 1 <span class="st">"*/data"</span> <span class="st">"*/environment.yaml"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> init <span class="at">--import</span> environment.yaml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> shell</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="type-exit-to-return-to-base-shell" class="level1">
+<h1>type ‘exit’ to return to base shell</h1>
 <p>I encourage you to build up the Snakefile incrementally starting with the <a href="https://snakemake.readthedocs.io/en/stable/tutorial/basics.html">basics</a>.</p>
 <p>You can view the full tea Snakefile <a href="https://github.com/danrobertson87/snakemake_tutorial_2026/blob/main/go_on/Snakefile">here</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> go_on</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> go_on</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># download Snakefile or copy/paste from above link</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> Snakefile</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm file is there</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 1 <span class="at">-p</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br>
 <br>
 </p>
 <p><a href="https://biology.ed.ac.uk/drp">Discovery Research Platform for Hidden Cell Biology</a></p>
-</section>
 </section>
 
 </main>
